@@ -1,0 +1,178 @@
+version: api.keploy.io/v1beta1
+name: report-1
+status: PASSED
+success: 2
+failure: 0
+total: 2
+tests:
+    - kind: Http
+      name: report-1
+      status: PASSED
+      started: 1706780320
+      completed: 1706780321
+      test_case_path: /Users/kimkiyong/Programming/keploy-samples-go/graphql-sql/keploy/test-set-0
+      mock_path: ""
+      test_case_id: test-1
+      req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://172.22.0.3:8080/graphql
+        header:
+            Accept: '*/*'
+            Content-Length: "150"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.4.0
+        body: |-
+            {
+              mutation CreateAuthor {
+                createAuthor(name: "Abc xyz", email: "abc@xyz.com") {
+                    created_at
+                    email
+                    id
+                    name
+                }
+            }
+        body_type: ""
+        timestamp: 0001-01-01T00:00:00Z
+        host: ""
+      resp:
+        status_code: 200
+        header:
+            Content-Length: "105"
+            Content-Type: application/json; charset=utf-8
+            Date: Thu, 01 Feb 2024 09:34:17 GMT
+        body: |-
+            {
+            	"data": null,
+            	"errors": [
+            		{
+            			"message": "Must provide an operation.",
+            			"locations": []
+            		}
+            	]
+            }
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 0001-01-01T00:00:00Z
+      noise:
+        header.Date: []
+      result:
+        status_code:
+            normal: false
+            expected: 200
+            actual: 200
+        headers_result: []
+        body_result:
+            - normal: false
+              type: JSON
+              expected: |-
+                {
+                	"data": null,
+                	"errors": [
+                		{
+                			"message": "Must provide an operation.",
+                			"locations": []
+                		}
+                	]
+                }
+              actual: |-
+                {
+                	"data": null,
+                	"errors": [
+                		{
+                			"message": "Must provide an operation.",
+                			"locations": []
+                		}
+                	]
+                }
+        dep_result: []
+    - kind: Http
+      name: report-1
+      status: PASSED
+      started: 1706780321
+      completed: 1706780321
+      test_case_path: /Users/kimkiyong/Programming/keploy-samples-go/graphql-sql/keploy/test-set-0
+      mock_path: ""
+      test_case_id: test-2
+      req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://172.22.0.3:8080/graphql
+        header:
+            Accept: '*/*'
+            Content-Length: "150"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.4.0
+        body: |-
+            {
+              mutation CreateAuthor {
+                createAuthor(name: "Abc xyz", email: "abc@xyz.com") {
+                    created_at
+                    email
+                    id
+                    name
+                }
+            }
+        body_type: ""
+        timestamp: 0001-01-01T00:00:00Z
+        host: ""
+      resp:
+        status_code: 200
+        header:
+            Content-Length: "105"
+            Content-Type: application/json; charset=utf-8
+            Date: Thu, 01 Feb 2024 09:34:43 GMT
+        body: |-
+            {
+            	"data": null,
+            	"errors": [
+            		{
+            			"message": "Must provide an operation.",
+            			"locations": []
+            		}
+            	]
+            }
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 0001-01-01T00:00:00Z
+      noise:
+        header.Date: []
+      result:
+        status_code:
+            normal: false
+            expected: 200
+            actual: 200
+        headers_result: []
+        body_result:
+            - normal: false
+              type: JSON
+              expected: |-
+                {
+                	"data": null,
+                	"errors": [
+                		{
+                			"message": "Must provide an operation.",
+                			"locations": []
+                		}
+                	]
+                }
+              actual: |-
+                {
+                	"data": null,
+                	"errors": [
+                		{
+                			"message": "Must provide an operation.",
+                			"locations": []
+                		}
+                	]
+                }
+        dep_result: []
+test_set: test-set-0

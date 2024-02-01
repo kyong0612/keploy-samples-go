@@ -1,0 +1,71 @@
+version: api.keploy.io/v1beta1
+kind: Http
+name: test-1
+spec:
+    metadata: {}
+    req:
+        method: POST
+        proto_major: 1
+        proto_minor: 1
+        url: http://localhost:8080/graphql
+        header:
+            Accept: '*/*'
+            Content-Length: "150"
+            Content-Type: application/json
+            Host: localhost:8080
+            User-Agent: curl/8.4.0
+        body: |-
+            {
+              mutation CreateAuthor {
+                createAuthor(name: "Abc xyz", email: "abc@xyz.com") {
+                    created_at
+                    email
+                    id
+                    name
+                }
+            }
+        body_type: ""
+        timestamp: 2024-02-01T09:34:17.328779283Z
+        host: ""
+    resp:
+        status_code: 200
+        header:
+            Content-Length: "105"
+            Content-Type: application/json; charset=utf-8
+            Date: Thu, 01 Feb 2024 09:34:17 GMT
+        body: |-
+            {
+            	"data": null,
+            	"errors": [
+            		{
+            			"message": "Must provide an operation.",
+            			"locations": []
+            		}
+            	]
+            }
+        body_type: ""
+        status_message: ""
+        proto_major: 0
+        proto_minor: 0
+        timestamp: 2024-02-01T09:34:17.343946421Z
+    objects: []
+    assertions:
+        noise:
+            header.Date: []
+    created: 1706780059
+curl: |-
+    curl --request POST \
+      --url http://localhost:8080/graphql \
+      --header 'User-Agent: curl/8.4.0' \
+      --header 'Accept: */*' \
+      --header 'Content-Type: application/json' \
+      --header 'Host: localhost:8080' \
+      --data '{
+      mutation CreateAuthor {
+        createAuthor(name: "Abc xyz", email: "abc@xyz.com") {
+            created_at
+            email
+            id
+            name
+        }
+    }'
